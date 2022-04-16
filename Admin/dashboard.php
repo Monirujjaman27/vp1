@@ -4,7 +4,7 @@
 
 <?php
 $database = mysqli_connect('localhost', 'root', '', 'p1');
-$appointMentQuary = "SELECT * From appointment ORDER BY id DESC";
+$appointMentQuary = "SELECT * From subscribers ORDER BY id DESC";
 $contactQuary = "SELECT * From contactmessage ORDER BY id DESC";
 $serviceQuary = "SELECT * From services ORDER BY id DESC";
 $appointData = mysqli_query($database, $appointMentQuary);
@@ -22,7 +22,7 @@ $serviceCount = mysqli_query($database, $serviceQuary);
               <div class="col-9 p-2  bg-info text-align-center">
                 <div class="text-align-center">
                   <p class="p-0 m-0 text-white">Total</p>
-                  <strong><a class="text-white" href="appointment.php">Appointment</a></strong>
+                  <strong><a class="text-white" href="appointment.php">Subscribers</a></strong>
                 </div>
               </div>
               <div class="col-3 bg-success">
@@ -52,7 +52,7 @@ $serviceCount = mysqli_query($database, $serviceQuary);
               <div class="col-9 p-2  bg-primary text-align-center">
                 <div class="text-align-center">
                   <p class="p-0 m-0 text-white">Total</p>
-                  <strong > <a class="text-white" href="service.php"> Services</a></strong>
+                  <strong> <a class="text-white" href="service.php"> Services</a></strong>
                 </div>
               </div>
               <div class="col-3 bg-danger">

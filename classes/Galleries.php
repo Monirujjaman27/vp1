@@ -39,7 +39,7 @@ class Galleries
             $msg = "You can upload only: " . implode(', ', $permited);
             return $msg;
         } else {
-            move_uploaded_file($file_temp, $upload_image);
+            move_uploaded_file($file_temp, $upload_image); 
             $query = "INSERT INTO gallery(name, description, image) VALUES ('$name','$description','$upload_image')";
             $result = $this->db->insert($query);
             if ($result) {

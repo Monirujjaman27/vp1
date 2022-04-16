@@ -3,16 +3,15 @@
 1. install xampp
 
    #Project install process..
-2. past the unzip folder C:\xampp\htdocs\
-3. create database name = parlor
+2. Download and unzip folder and past in C:\xampp\htdocs\
+3. create database name = p1
 4. import sql file in your database
 5. Open xampp and start mysql and apache
-6. Open a browser and past the url http://localhost/parlor
-   7.For Admin Dashboard http://localhost/parlor/admin
-   (usename: parlor & password 12356789)
-7. Finally enjoy and implement the project for your requirement
+6. Open the url on your browser http://localhost/p1
+7. For Admin Dashboard http://localhost/p1/admin
+   (usename: p1 & password 12356789)
+8. enjoy and implement the project for your requirement
 
-#Working History
 
  #Frontend View
 1. homepage contact form submit

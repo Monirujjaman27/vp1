@@ -25,7 +25,7 @@ Session::checkSession();
     <nav class="m-0">
       <div class="row mx-3">
         <div class="col-sm-8">
-          <a href="../index.php">
+          <a target="_blank" href="../index.php">
             <img src="../assets/images/logo.jpg" class="img-thumbnail" width="30px" alt=" logo">
           </a>
         </div>

@@ -46,7 +46,7 @@ $result = $data->fetch_assoc();
             <input class="form-control" name="oldImage" value="<?php echo isset($result["image"]) ? $result["image"] : ''; ?>" type="hidden">
           </div>
           <div class="form-group">
-            <img class='' height="50" width="50" src="<?= $result['image']; ?>" alt="">
+            <img class='' height="50" width="50" src="<?= $result['image']; ?>" alt="<?= $result['image']; ?>">
           </div>
           <a class="btn btn-info mt-3" href="sliders.php"><i class="fa fa-arrow-left"></i> Back</a>
           <button class="btn btn-success mt-3 float-right" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>

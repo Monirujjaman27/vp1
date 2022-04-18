@@ -28,7 +28,7 @@ class Service
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/" . $unique_image;
+        $upload_image = "upload/services/" . $unique_image;
         if ($name == '' || $file == '') {
             $msg = 'Fild Must Not Be empty';
             return $msg;
@@ -72,7 +72,7 @@ class Service
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/" . $unique_image;
+        $upload_image = "upload/services/" . $unique_image;
         if (empty($file_name)) {
             if ($name == '') {
                 $msg = 'Fild Must Not Be empty';

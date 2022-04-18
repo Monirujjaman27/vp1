@@ -12,6 +12,9 @@ $db = new database();
 $fm = new Format();
 $contact_message_class = new Contactmessage();
 $Slider_class = new Slider();
+$gallery_class = new Galleries();
+$pakages_class = new Pakages();
+$order_class = new OrderClass();
 $services_class = new Service();
 $setting = new defaultSettings();
 $data = $setting->showById(null);
@@ -41,15 +44,14 @@ $default_settings_items = $data->fetch_assoc();
         <link rel="stylesheet" href="assets/css/font-icons.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css" />
-
-        <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
         <link rel="stylesheet" href="assets/my.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="assets/images/logo.jpg" type="image/gif" sizes="16x16">
-
         <!-- Document Title
 	============================================= -->
         <title><?= $default_settings_items['title'] ?></title>
+
     </head>
 
 <body class="stretched">
@@ -78,8 +80,12 @@ $default_settings_items = $data->fetch_assoc();
                         <!-- Logo
 						============================================= -->
                         <div id="logo">
-                            <a href="index.php" class="standard-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a>
-                            <a href="index.php" class="retina-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a>
+                            <a href="index.php">
+                                <h1 style="margin: 0;" class="logo_area--text"><?= $default_settings_items['title'] ?></h1>
+                            </a>
+                            <!-- <h1>Marzia's Mehendi</h1> -->
+                            <!-- <a href="index.php" class="standard-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a>
+                            <a href="index.php" class="retina-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a> -->
                         </div><!-- #logo end -->
                         <div class="header-misc">
 
@@ -148,6 +154,11 @@ $default_settings_items = $data->fetch_assoc();
                                 <li class="menu-item">
                                     <a class="menu-link" href="index.php">
                                         <div>Home</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="pakages.php">
+                                        <div>Pakages</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">

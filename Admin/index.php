@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="row mt-5">
       <div class="col-sm-4 m-auto">
         <div class="card px-3 pb-5 pt-4">
-          <h4 class="text-center">Admin Login</h4>
+          <h4 class="text-center font-weight-bold">Sign In From</h4>
           <span class="text-danger">
             <?php
             if (isset($logincheck)) {
@@ -45,9 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br>
             <input id="password" name="password" class="form-control" type="password" placeholder="Password">
             <br>
-            <input class="btn btn-block mt-2 btn-secondary " type="submit" value="Login">
+            <input class="btn btn-block mt-2 btn-success " type="submit" value="Sign In">
           </form>
-          <span class="mt-3"><a href="#">Forget Password</a></span>
         </div>
       </div>
     </div>

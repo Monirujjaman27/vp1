@@ -6,3 +6,82 @@
 -----------------------------------------------------------------*/
 
 
+.section_heading--area span {
+	font-size: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: #f1bd0057;
+	padding: 0px 8px;
+	color: #c79a16;
+}
+
+.font-weight-bold {
+	font-weight: bold;
+}
+
+.p_details--title {
+	font-size: 20px;
+	margin: 0;
+	padding: 10px 0px;
+}
+
+.ling-height-1-5 {
+	line-height: 1.5 !important;
+}
+
+.menu-link,
+.logo_area--text {
+	color: #fff;
+}
+
+
+.bg-overlay{
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+.gallery_wrapper:hover .bg-overlay{
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	transition: 1s;
+}
+.product_details {
+	padding-left: 15px;
+	padding-bottom: 20px;
+}
+
+
+.content_details--text {
+	line-height: 1.5 !important;
+	margin: 0;
+}
+
+.review_style {
+	color: #cbcb04;
+	margin: 0;
+	padding: 5px 0;
+}
+
+.review_style li {
+	margin-right: 8px;
+}
+
+.regular_price {
+	font-weight: bold;
+}
+
+.book_now-btn {
+	border-radius: 0;
+}
+
+
+
+.card_bg {
+	background: #eee;
+	border-radius: 5px;
+}
+
+.pakage_image {
+	border-radius: 5px 5px 0px 0px;
+}

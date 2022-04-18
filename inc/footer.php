@@ -10,7 +10,7 @@
                     <div class="widget clearfix">
                         <div class="row col-mb-30">
                             <div class="col-6 col-lg-6 widget_links">
-                                <img src="<?= $default_settings_items['logo'] ?>" alt="Image" style="margin-top: 8px; padding-right: 18px;" width="150px">
+                                <img class="" src="<?= $default_settings_items['logo'] ?>" alt="Image" style="margin-top: 8px; padding-right: 18px;" width="150px">
                                 <p class="about_conternt-text"><?= $default_settings_items['about'] ?></p>
                             </div>
                             <div class="col-6 col-lg-6 widget_links">

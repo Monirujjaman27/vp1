@@ -1,11 +1,11 @@
 <?php include "inc/header.php"; ?>
 <?php include 'inc/left-sidebar.php'; ?>
-<?php include '../classes/Galleries.php'; ?>
+<?php include '../classes/Pakages.php'; ?>
 
 
 
 <?php
-$service = new Galleries();
+$service = new Pakages();
 $gatId = base64_decode($_GET['id']);
 if (!isset($gatId) || $gatId == NULL) {
   header('Location:galery.php');
@@ -35,6 +35,19 @@ $result = $data->fetch_assoc();
             <label for="Name">Title</label>
             <input class="form-control" name="name" value="<?php echo isset($result["name"]) ? $result["name"] : ''; ?>" type="text" required placeholder="Title">
           </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input class="form-control" name="price" value="<?php echo isset($result["price"]) ? $result["price"] : ''; ?>" type="number" required placeholder="Price">
+          </div>
+          <div class="form-group">
+            <label for="offerprice">OfferPrice</label>
+            <input class="form-control" name="offerprice" value="<?php echo isset($result["offerprice"]) ? $result["offerprice"] : ''; ?>" type="number" required placeholder="OfferPrice">
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating</label>
+            <input class="form-control" min="1" max="5" name="rating" value="<?php echo isset($result["rating"]) ? $result["rating"] : ''; ?>" type="number" required placeholder="Rating">
+          </div>
+
 
           <div class="form-group">
             <label for="description">Description</label>
@@ -48,7 +61,7 @@ $result = $data->fetch_assoc();
           <div class="form-group">
             <img class='' height="50" width="50" src="<?= $result['image']; ?>" alt="<?= $result['image']; ?>">
           </div>
-          <a class="btn btn-info mt-3" href="gallery.php"><i class="fa fa-arrow-left"></i> Back</a>
+          <a class="btn btn-info mt-3" href="pakages.php"><i class="fa fa-arrow-left"></i> Back</a>
           <button class="btn btn-success mt-3 float-right" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
         </form>
       </div>

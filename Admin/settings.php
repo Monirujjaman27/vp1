@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <div class="col-sm-10">
     <div class="card border-dark mh-600">
-        <h1 class="alert alert-info mb-0"><strong>Settings</strong></h1>
+        <h5 class="alert alert-info mb-0"><strong>Settings</strong></h5>
         <div class="mx-2 col-sm-10">
             <form action="" method="POST" enctype="multipart/form-data">
                 <p class="text-danger">

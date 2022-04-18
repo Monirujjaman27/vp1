@@ -34,7 +34,7 @@
                 <td><?= $result['email']; ?></td>
                 <td>
                   <span>
-                    <a onclick="return confirm('Are You Sure To Delete')" href="?delid=<?= base64_encode($result['id']); ?>">Delete</a>
+                    <a onclick="return confirm('Are You Sure To Delete')" href="?delid=<?= base64_encode($result['id']); ?>"><i class="fa fa-trash btn btn-danger btn-sm" aria-hidden="true"></i></a>
                   </span>
                 </td>
               </tr>

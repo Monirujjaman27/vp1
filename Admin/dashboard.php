@@ -14,7 +14,7 @@ $serviceCount = mysqli_query($database, $serviceQuary);
 <div class="col-sm-10">
   <div class="card border-dark mh-600">
     <div class="container">
-      <h1><strong>Welcome <?php echo session::get('username'); ?> </strong></h1>
+      <h6 class="my-3"><strong>Welcome <?php echo session::get('username'); ?> </strong></h6>
       <div class="card">
         <div class="row p-2 m-0">
           <div class="col-sm-12 col-md-4 col-lg-4">
@@ -49,13 +49,13 @@ $serviceCount = mysqli_query($database, $serviceQuary);
           </div>
           <div class="col-sm-12 col-md-4 col-lg-4">
             <div class="row p-1">
-              <div class="col-9 p-2  bg-primary text-align-center">
+              <div class="col-9 p-2  bg-warning text-align-center">
                 <div class="text-align-center">
                   <p class="p-0 m-0 text-white">Total</p>
                   <strong> <a class="text-white" href="service.php"> Services</a></strong>
                 </div>
               </div>
-              <div class="col-3 bg-danger">
+              <div class="col-3 bg-primary">
                 <h2 class="text-white pl-2 mt-2 text-align-center"><?php if (mysqli_num_rows($serviceCount) > 0) {
                                                                       echo  mysqli_num_rows($serviceCount);
                                                                     } ?></h2>

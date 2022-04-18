@@ -28,7 +28,7 @@ class Galleries
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/" . $unique_image;
+        $upload_image = "upload/gallery/" . $unique_image;
         if ($name == '' || $file == '') {
             $msg = 'Fild Must Not Be empty';
             return $msg;
@@ -39,7 +39,7 @@ class Galleries
             $msg = "You can upload only: " . implode(', ', $permited);
             return $msg;
         } else {
-            move_uploaded_file($file_temp, $upload_image); 
+            move_uploaded_file($file_temp, $upload_image);
             $query = "INSERT INTO gallery(name, description, image) VALUES ('$name','$description','$upload_image')";
             $result = $this->db->insert($query);
             if ($result) {
@@ -51,6 +51,12 @@ class Galleries
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
         }
+    }
+    public function showLimit()
+    {
+        $query = "SELECT * FROM gallery order by id DESC Limit 6";
+        $result = $this->db->select($query);
+        return $result;
     }
     public function show()
     {
@@ -74,7 +80,7 @@ class Galleries
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/" . $unique_image;
+        $upload_image = "upload/gallery/" . $unique_image;
         if (empty($file_name)) {
             if ($name == '') {
                 $msg = 'Fild Must Not Be empty';

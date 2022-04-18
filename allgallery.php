@@ -35,7 +35,7 @@
             <div class="row">
 
                 <?php
-                $getdata = $gallery_class->showLimit();
+                $getdata = $gallery_class->show();
                 if ($getdata) {
                     while ($result = $getdata->fetch_assoc()) {
                 ?>
@@ -48,7 +48,7 @@
                                             <h1 class="p_details--title text-center text-warning"><?= $result['name']; ?></h1>
                                             <div class="text-center">
                                                 <p class="px-2 text-white ling-height-1-5 m-0"><?= $result['description']; ?></p>
-                                                <a href="allgallery.php" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold rounded-0">View More</a>
+                                                <a href="" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold rounded-0">View More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -58,9 +58,6 @@
                 <?php }
                 } ?>
             </div>
-            <h6 class="text-center">
-                <a href="allgallery.php" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold rounded-0">View All</a>
-            </h6>
         </div>
     </div>
 </section><!-- #content end -->

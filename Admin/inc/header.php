@@ -38,7 +38,7 @@ Session::checkSession();
             ?>
             <li class="mr-2"><a href="#">Name: <?php echo session::get('username');
                                                 echo ' |'; ?></a></li>
-            <li class="mr-2"><a href="?action=logout">Logout</a></li>
+            <li class="mr-2"><a href="?action=logout">Sign Out</a></li>
           </ul>
         </div>
       </div>

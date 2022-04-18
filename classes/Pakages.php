@@ -4,7 +4,7 @@ include_once($filepath . '/../lib/database.php');
 include_once($filepath . '/../halpers/formet.php');
 ?>
 <?php
-class Slider
+class Pakages
 {
     private $db;
     private $fm;
@@ -17,10 +17,14 @@ class Slider
     {
         $name = $this->fm->validation($req['name']);
         $name = mysqli_real_escape_string($this->db->link, $name);
-        $heading = $this->fm->validation($req['heading']);
-        $heading = mysqli_real_escape_string($this->db->link, $heading);
-        $subheading = $this->fm->validation($req['subheading']);
-        $subheading = mysqli_real_escape_string($this->db->link, $subheading);
+        $price = $this->fm->validation($req['price']);
+        $price = mysqli_real_escape_string($this->db->link, $price);
+        $offerprice = $this->fm->validation($req['offerprice']);
+        $offerprice = mysqli_real_escape_string($this->db->link, $offerprice);
+        $description = $this->fm->validation($req['description']);
+        $description = mysqli_real_escape_string($this->db->link, $description);
+        $rating = $this->fm->validation($req['rating']);
+        $rating = mysqli_real_escape_string($this->db->link, $rating);
 
         $permited  = array('jpg', 'jepg', 'png', 'gif');
         $file_name = $file['image']['name'];
@@ -30,7 +34,7 @@ class Slider
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/sliders/" . $unique_image;
+        $upload_image = "upload/pakages/" . $unique_image;
         if ($name == '' || $file == '') {
             $msg = 'Fild Must Not Be empty';
             return $msg;
@@ -42,21 +46,27 @@ class Slider
             return $msg;
         } else {
             move_uploaded_file($file_temp, $upload_image);
-            $query = "INSERT INTO sliders(name, heading, subheading, image) VALUES ('$name','$heading','$subheading','$upload_image')";
+            $query = "INSERT INTO pakages(name, price, offerprice, description, image, rating) VALUES ('$name','$price','$offerprice','$description','$upload_image', '$rating')";
             $result = $this->db->insert($query);
             if ($result) {
-                session::set('success', 'Slider Create Successfully');
+                session::set('success', 'pakages Create Successfully');
                 $name = '';
                 $file = '';
-                header("Location:sliders.php");
+                header("Location:pakages.php");
             } else {
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
         }
     }
+    public function showLimit()
+    {
+        $query = "SELECT * FROM pakages order by id DESC Limit 6";
+        $result = $this->db->select($query);
+        return $result;
+    }
     public function show()
     {
-        $query = "SELECT * FROM sliders order by id DESC";
+        $query = "SELECT * FROM pakages order by id DESC";
         $result = $this->db->select($query);
         return $result;
     }
@@ -64,10 +74,15 @@ class Slider
     {
         $name = $this->fm->validation($req['name']);
         $name = mysqli_real_escape_string($this->db->link, $name);
-        $heading = $this->fm->validation($req['heading']);
-        $heading = mysqli_real_escape_string($this->db->link, $heading);
-        $subheading = $this->fm->validation($req['subheading']);
-        $subheading = mysqli_real_escape_string($this->db->link, $subheading);
+        $price = $this->fm->validation($req['price']);
+        $price = mysqli_real_escape_string($this->db->link, $price);
+        $offerprice = $this->fm->validation($req['offerprice']);
+        $offerprice = mysqli_real_escape_string($this->db->link, $offerprice);
+        $description = $this->fm->validation($req['description']);
+        $description = mysqli_real_escape_string($this->db->link, $description);
+        $rating = $this->fm->validation($req['rating']);
+        $rating = mysqli_real_escape_string($this->db->link, $rating);
+
         $oldImage = $this->fm->validation($req['oldImage']);
         $oldImage = mysqli_real_escape_string($this->db->link, $oldImage);
 
@@ -78,16 +93,16 @@ class Slider
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/sliders/" . $unique_image;
+        $upload_image = "upload/pakages/" . $unique_image;
         if (empty($file_name)) {
             if ($name == '') {
                 $msg = 'Fild Must Not Be empty';
                 return $msg;
             } else {
-                $query = "UPDATE sliders SET name = '$name', heading = '$heading', subheading = '$subheading' WHERE id = '$id'";
+                $query = "UPDATE pakages SET name = '$name', price = '$price', offerprice = '$offerprice', description = '$description', rating = '$rating' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:sliders.php");
+                    header("Location:pakages.php");
                     session::set('success', 'Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to update');
@@ -105,14 +120,13 @@ class Slider
                 if (file_exists($oldImage)) {
                     unlink($oldImage);
                 }
-                $query = "UPDATE sliders SET name = '$name', heading = '$heading', subheading = '$subheading', image = '$upload_image' WHERE id = '$id'";
+                $query = "UPDATE pakages SET name = '$name', price = '$price', offerprice = '$offerprice', description = '$description', image = '$upload_image', rating = '$rating' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:sliders.php");
-                    session::set('success', 'Slider Update Successfully');
+                    header("Location:pakages.php");
+                    session::set('success', 'pakages Update Successfully');
                 } else {
-                    $msg = 'There Was Something Wrong to Update';
-                    session::set('warning', $msg);
+                    session::set('warning', 'There Was Something Wrong to Update');
                 }
             }
         }
@@ -120,7 +134,7 @@ class Slider
 
     public function showById($gatId)
     {
-        $query = "SELECT * FROM sliders WHERE id = '$gatId'";
+        $query = "SELECT * FROM pakages WHERE id = '$gatId'";
         $result = $this->db->select($query);
         return $result;
     }
@@ -129,19 +143,19 @@ class Slider
 
     {
         $database = mysqli_connect('localhost', 'root', '', 'p1');
-        $quary = "SELECT * FROM sliders where id = '$gatId'";
+        $quary = "SELECT * FROM pakages where id = '$gatId'";
         $quaryData = mysqli_query($database, $quary);
         if (mysqli_num_rows($quaryData) > 0) {
             foreach ($quaryData as $item) {
                 $queryImage = $item['image'];
-                $delquery = "DELETE FROM sliders WHERE id = '$gatId'";
+                $delquery = "DELETE FROM pakages WHERE id = '$gatId'";
                 $deldata = $this->db->delete($delquery);
                 if ($deldata) {
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    header("Location:sliders.php");
-                    session::set('success', 'Slider Delete Successfully');
+                    header("Location:pakages.php");
+                    session::set('success', 'pakages Delete Successfully');
                 } else {
                     $msg = '<p class="mb-0 text-warning">There Was Something Wrong to Delete</p>';
                     return $msg;

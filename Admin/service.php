@@ -46,8 +46,8 @@
                 <td><img class='' height="50" width="50" src="<?= $result['image']; ?>" alt="<?= $result['image']; ?>"></td>
                 <td>
                   <span>
-                    <a href="editService.php?id=<?= base64_encode($result['id']); ?>">Edit</a> ||
-                    <a onclick="return confirm('Are You Sure To Delete')" href="?delid=<?= base64_encode($result['id']); ?>">Delete</a>
+                    <a href="editService.php?id=<?= base64_encode($result['id']); ?>"><i class="fa fa-pencil-square-o btn btn-info btn-sm" aria-hidden="true"></i></a>
+                    <a onclick="return confirm('Are You Sure To Delete')" href="?delid=<?= base64_encode($result['id']); ?>"><i class="fa fa-trash btn btn-danger btn-sm" aria-hidden="true"></i></a>
                   </span>
                 </td>
               </tr>

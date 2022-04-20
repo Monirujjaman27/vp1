@@ -31,11 +31,16 @@ class OrderClass
         $requirements = mysqli_real_escape_string($this->db->link, $requirements);
         $date = $this->fm->validation($req['date']);
         $date = mysqli_real_escape_string($this->db->link, $date);
-
+        $checkQuery = "SELECT * FROM orders WHERE email = '$email'";
+        $checkEmail = $this->db->select($checkQuery);
+        if ($checkEmail) {
+            if (mysqli_num_rows($checkEmail)) return "<p class='alert alert-warning'>This email is already being used</p>";
+        }
         $query = "INSERT INTO orders(name, pakage_name, price, offerprice, email, phone, date, requirements) VALUES ('$name','$pakage_name','$price','$offerprice','$email','$phone', '$date','$requirements')";
         $result = $this->db->insert($query);
         if ($result) {
-            return '<p class="mb-0 alert alert-success">Booking Successfully</p>';
+            return '<script type="text/javascript">window.location = "thankyou.php"</script>';
+            // return '<p class="mb-0 alert alert-success">Booking Successfully. We will Contact You Soon</p>';
         } else {
             session::set('warning', 'There Was Something Wrong to Insert the Service');
         }

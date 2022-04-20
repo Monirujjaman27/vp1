@@ -18,6 +18,11 @@ class Subscribers
         $email = $this->fm->validation($req['email']);
         $email = mysqli_real_escape_string($this->db->link, $email);
         if ($email == '') session::set('subscribermessage-error', 'Enter Your Mail');
+        $checkQuery = "SELECT * FROM subscribers WHERE email = '$email'";
+        $checkEmail = $this->db->select($checkQuery);
+        if ($checkEmail) {
+            if (mysqli_num_rows($checkEmail)) return "<span class='text-warning'>This email is already being used</span>";
+        }
         $query = "INSERT INTO subscribers(email) VALUES ('$email')";
         $result = $this->db->insert($query);
         if ($result) {

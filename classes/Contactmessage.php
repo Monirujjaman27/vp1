@@ -54,7 +54,7 @@ class Contactmessage
         $message = mysqli_real_escape_string($this->db->link, $message);
 
 
-        $query = "INSERT INTO contactmessage(name, email,phone, messagebody) VALUES ('$name','$email','$phone','$message')";
+        $query = "INSERT INTO contactmessage(name, email, phone, messagebody) VALUES ('$name','$email','$phone','$message')";
         $result = $this->db->insert($query);
         if ($result) {
             return "<span class='text-success'>Message Sent Successfully</span>";

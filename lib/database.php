@@ -82,7 +82,7 @@ class Database
       return false;
     }
   }
-  
+
   // Delete data
   public function selectSingle($query)
   {

@@ -84,26 +84,23 @@ if (!isset($gatId) || $gatId == NULL) {
 
                 </div>
                 <div class="col-sm-13 col-md-4 m-auto">
-                    <?php
-                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                        if (empty($_POST['name'])) {
-                            echo "<span class='text-danger'>Enter Your name  </span>";
-                        } elseif (empty($_POST['email'])) {
-                            echo "<span class='text-danger'>Enter Your Email  </span>";
-                        } elseif (empty($_POST['date'])) {
-                            echo "<span class='text-danger'>Please Enter Date And Time  </span>";
-                        } else {
-                            echo $order_class->add($_POST);
-                            $_POST['name'] = '';
-                            $_POST['email'] = '';
-                            $_POST['phone'] = '';
-                            $_POST['date'] = '';
-                            $_POST['requirements'] = '';
-                        }
-                    }
-                    ?>
                     <div class="form">
                         <form action="" method="POST">
+                            <?php
+                            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                if (empty($_POST['name'])) {
+                                    echo "<span class='text-danger'>Enter Your name  </span>";
+                                } elseif (empty($_POST['email'])) {
+                                    echo "<span class='text-danger'>Enter Your Email  </span>";
+                                } elseif (empty($_POST['date'])) {
+                                    echo "<span class='text-danger'>Please Enter Date And Time  </span>";
+                                } elseif (!empty($_POST['phone'] && strlen($_POST['phone']) !== 11)) {
+                                    echo "<span class='text-danger'>Phone Number Must be Generate Then 11 Digit </span>";
+                                } else {
+                                    echo  $order_class->add($_POST);
+                                }
+                            }
+                            ?>
                             <input type="hidden" name="pakage_name" value="<?= ucfirst($result['name']); ?>">
                             <input type="hidden" name="price" value="<?= $result['price']; ?>">
                             <input type="hidden" name="offerprice" value="<?= $result['offerprice']; ?>">
@@ -113,7 +110,7 @@ if (!isset($gatId) || $gatId == NULL) {
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" placeholder="Email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" class="form-control">
+                                <input type="email" name="email" placeholder="Email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone</label>

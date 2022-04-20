@@ -17,6 +17,7 @@ $pakages_class = new Pakages();
 $order_class = new OrderClass();
 $services_class = new Service();
 $setting = new defaultSettings();
+$aboutPageClass = new AboutPageClass();
 $data = $setting->showById(null);
 $default_settings_items = $data->fetch_assoc();
 ?>
@@ -83,9 +84,6 @@ $default_settings_items = $data->fetch_assoc();
                             <a href="index.php">
                                 <h1 style="margin: 0;" class="logo_area--text"><?= $default_settings_items['title'] ?></h1>
                             </a>
-                            <!-- <h1>Marzia's Mehendi</h1> -->
-                            <!-- <a href="index.php" class="standard-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a>
-                            <a href="index.php" class="retina-logo" data-dark-logo="assets/images/logo.jpg"><img src="<?= $default_settings_items['logo'] ?>" alt="Logo"></a> -->
                         </div><!-- #logo end -->
                         <div class="header-misc">
 

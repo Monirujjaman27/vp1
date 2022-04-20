@@ -46,7 +46,8 @@ class Service
                 $name = '';
                 $file = '';
                 session::set('success', 'Service Create Successfully');
-                header("Location:service.php");
+                // header("Location:service.php");
+                echo "<script type='text/javascript'>window.location.href='service.php'</script>";
             } else {;
                 session::set('warning', 'There Was Something Wrong to Update');
             }
@@ -103,7 +104,9 @@ class Service
                 $query = "UPDATE services SET name = '$name', image = '$upload_image' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:service.php");
+                    // header("Location:service.php");
+                    echo "<script type='text/javascript'>window.location.href='service.php'</script>";
+                    
                     session::set('success', 'Service Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
@@ -111,16 +114,16 @@ class Service
             }
         }
     }
-
+    
     public function showById($gatId)
     {
         $query = "SELECT * FROM services WHERE id = '$gatId'";
         $result = $this->db->select($query);
         return $result;
     }
-
+    
     public function del($gatId)
-
+    
     {
         $database = mysqli_connect('localhost', 'root', '', 'p1');
         $quary = "SELECT * FROM services where id = '$gatId'";

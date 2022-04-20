@@ -61,7 +61,8 @@ class Subscribers
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    header("Location:subscribers.php");
+                    // header("Location:subscribers.php");
+                echo "<script type='text/javascript'>window.location.href='subscribers.php'</script>";
                     session::set('success', 'subscribers Delete Successfully');
                 } else {
                     $msg = '<p class="mb-0 text-warning">There Was Something Wrong to Delete</p>';

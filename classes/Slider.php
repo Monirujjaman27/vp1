@@ -48,7 +48,8 @@ class Slider
                 session::set('success', 'Slider Create Successfully');
                 $name = '';
                 $file = '';
-                header("Location:sliders.php");
+                // header("Location:sliders.php");
+                echo "<script type='text/javascript'>window.location.href='sliders.php'</script>";
             } else {
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
@@ -87,7 +88,8 @@ class Slider
                 $query = "UPDATE sliders SET name = '$name', heading = '$heading', subheading = '$subheading' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:sliders.php");
+                    // header("Location:sliders.php");
+                    echo "<script type='text/javascript'>window.location.href='sliders.php'</script>";
                     session::set('success', 'Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to update');
@@ -108,7 +110,9 @@ class Slider
                 $query = "UPDATE sliders SET name = '$name', heading = '$heading', subheading = '$subheading', image = '$upload_image' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:sliders.php");
+                    // header("Location:sliders.php");
+                    echo "<script type='text/javascript'>window.location.href='sliders.php'</script>";
+
                     session::set('success', 'Slider Update Successfully');
                 } else {
                     $msg = 'There Was Something Wrong to Update';
@@ -140,7 +144,8 @@ class Slider
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    header("Location:sliders.php");
+                    // header("Location:sliders.php");
+                    echo "<script type='text/javascript'>window.location.href='sliders.php'</script>";
                     session::set('success', 'Slider Delete Successfully');
                 } else {
                     $msg = '<p class="mb-0 text-warning">There Was Something Wrong to Delete</p>';

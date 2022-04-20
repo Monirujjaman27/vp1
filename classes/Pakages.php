@@ -52,7 +52,8 @@ class Pakages
                 session::set('success', 'pakages Create Successfully');
                 $name = '';
                 $file = '';
-                header("Location:pakages.php");
+                echo "<script type='text/javascript'>window.location.href='pakages.php'</script>";
+                // header("Location:pakages.php");
             } else {
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
@@ -102,7 +103,8 @@ class Pakages
                 $query = "UPDATE pakages SET name = '$name', price = '$price', offerprice = '$offerprice', description = '$description', rating = '$rating' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:pakages.php");
+                    // header("Location:pakages.php");
+                    echo "<script type='text/javascript'>window.location.href='pakages.php'</script>";
                     session::set('success', 'Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to update');
@@ -123,7 +125,8 @@ class Pakages
                 $query = "UPDATE pakages SET name = '$name', price = '$price', offerprice = '$offerprice', description = '$description', image = '$upload_image', rating = '$rating' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:pakages.php");
+                    echo "<script type='text/javascript'>window.location.href='pakages.php'</script>";
+                    // header("Location:pakages.php");
                     session::set('success', 'pakages Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
@@ -154,7 +157,8 @@ class Pakages
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    header("Location:pakages.php");
+                    // header("Location:pakages.php");
+                    echo "<script type='text/javascript'>window.location.href='pakages.php'</script>";
                     session::set('success', 'pakages Delete Successfully');
                 } else {
                     $msg = '<p class="mb-0 text-warning">There Was Something Wrong to Delete</p>';

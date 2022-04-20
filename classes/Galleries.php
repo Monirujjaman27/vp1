@@ -46,7 +46,9 @@ class Galleries
                 session::set('success', 'Gallery Create Successfully');
                 $name = '';
                 $file = '';
-                header("Location:gallery.php");
+                // header("Location:gallery.php");
+                echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
+
             } else {
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
@@ -89,7 +91,9 @@ class Galleries
                 $query = "UPDATE gallery SET name = '$name', description = '$description' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:gallery.php");
+                    // header("Location:gallery.php");
+                    echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
+                    
                     session::set('success', 'Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to update');
@@ -110,7 +114,8 @@ class Galleries
                 $query = "UPDATE gallery SET name = '$name', description = '$description', image = '$upload_image' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
-                    header("Location:gallery.php");
+                    // header("Location:gallery.php");
+                    echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
                     session::set('success', 'Gallery Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
@@ -141,7 +146,8 @@ class Galleries
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    header("Location:gallery.php");
+                    // header("Location:gallery.php");
+                    echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
                     session::set('success', 'Gallery Delete Successfully');
                 } else {
                     $msg = '<p class="mb-0 text-warning">There Was Something Wrong to Delete</p>';

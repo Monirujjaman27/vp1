@@ -39,6 +39,7 @@ class Galleries
             $msg = "You can upload only: " . implode(', ', $permited);
             return $msg;
         } else {
+            if (!is_dir('upload/gallery')) mkdir('upload/gallery', 0777, true);
             move_uploaded_file($file_temp, $upload_image);
             $query = "INSERT INTO gallery(name, description, image) VALUES ('$name','$description','$upload_image')";
             $result = $this->db->insert($query);
@@ -48,7 +49,6 @@ class Galleries
                 $file = '';
                 // header("Location:gallery.php");
                 echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
-
             } else {
                 session::set('warning', 'There Was Something Wrong to Insert the Service');
             }
@@ -93,7 +93,7 @@ class Galleries
                 if ($result) {
                     // header("Location:gallery.php");
                     echo "<script type='text/javascript'>window.location.href='gallery.php'</script>";
-                    
+
                     session::set('success', 'Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to update');
@@ -107,6 +107,7 @@ class Galleries
                 $msg = "You can upload only: " . implode(', ', $permited);
                 return $msg;
             } else {
+                if (!is_dir('upload/gallery')) mkdir('upload/gallery', 7777, true);
                 move_uploaded_file($file_temp, $upload_image);
                 if (file_exists($oldImage)) {
                     unlink($oldImage);

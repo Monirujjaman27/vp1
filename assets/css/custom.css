@@ -7,12 +7,13 @@
 
 
 .section_heading--area span {
-	font-size: 30px;
-	font-weight: bold;
-	text-transform: uppercase;
-	background: #f1bd0057;
-	padding: 0px 8px;
-	color: #c79a16;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #29edd257;
+    padding: 0px 8px;
+    color: #34cd55;
+    border-radius: 50%;
 }
 
 .font-weight-bold {

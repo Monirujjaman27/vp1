@@ -24,29 +24,7 @@ Session::checkSession();
 </head>
 
 <body class="dashboard-body">
-  <header>
-    <nav class="m-0">
-      <div class="row mx-3">
-        <div class="col-sm-8">
-          <a target="_blank" href="../index.php">
-            <img src="../assets/images/logo.jpg" class="img-thumbnail" width="30px" alt=" logo">
-          </a>
-        </div>
-        <div class="col-sm-4">
-          <ul class="header-top-menue d-flex float-right mt-2">
-            <?php
-            if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-              session::destroy();
-            }
-            ?>
-            <li class="mr-2"><a href="#">Name: <?php echo session::get('username');
-                                                echo ' |'; ?></a></li>
-            <li class="mr-2"><a href="?action=logout">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+ 
 
   <?php
   if (isset($_GET['action']) && $_GET['action'] == 'delete-success') {

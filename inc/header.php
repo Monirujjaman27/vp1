@@ -60,19 +60,6 @@ $default_settings_items = $data->fetch_assoc();
     <!-- Document Wrapper
 	============================================= -->
     <div id="wrapper" class="clearfix">
-        <!-- Top Bar
-		============================================= -->
-        <div id="top-bar" class="py-3 text-center bg-color-light">
-            <div class="container clearfix">
-                <div class="d-md-flex justify-content-md-between align-items-md-center">
-                    <h4 class="mb-2 mb-md-0 h6 fw-normal">Free Shipping on every order <span class="mx-2 text-black-50">&middot;</span> 30 Days Return</h4>
-
-                    <h4 class="mb-0 h6 fw-normal">Need Help? Call us at <a class="color" href="tel:<?= $default_settings_items['phone'] ?>"><u class="fw-medium"><?= $default_settings_items['phone'] ?></u></a> or <a class="color" href="mailto:<?= $default_settings_items['email'] ?>"><u class="fw-medium">email</u></a> us.</h4>
-                </div>
-            </div>
-        </div><!-- #top-bar end -->
-        <!-- Header
-		============================================= -->
         <header id="header" class="full-header transparent-header" data-sticky-class="not-dark">
             <div id="header-wrap">
                 <div class="container">
@@ -86,7 +73,6 @@ $default_settings_items = $data->fetch_assoc();
                             </a>
                         </div><!-- #logo end -->
                         <div class="header-misc">
-
                             <!-- Top Search
 							============================================= -->
                             <div id="top-search" class="header-misc-icon">
@@ -152,21 +138,6 @@ $default_settings_items = $data->fetch_assoc();
                                 <li class="menu-item">
                                     <a class="menu-link" href="index.php">
                                         <div>Home</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="pakages.php">
-                                        <div>Pakages</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="about.php">
-                                        <div>About</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="gallerie.php">
-                                        <div>Galleries</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">

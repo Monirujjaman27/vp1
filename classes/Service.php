@@ -45,7 +45,7 @@ class Service
             if ($result) {
                 $name = '';
                 $file = '';
-                session::set('success', 'Service Create Successfully');
+                session::set('success', 'Food Create Successfully');
                 // header("Location:service.php");
                 echo "<script type='text/javascript'>window.location.href='service.php'</script>";
             } else {;
@@ -56,6 +56,13 @@ class Service
     public function show()
     {
         $query = "SELECT * FROM services order by id DESC";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
+    public function showLimit()
+    {
+        $query = "SELECT * FROM services order by id DESC Limit 6";
         $result = $this->db->select($query);
         return $result;
     }
@@ -107,7 +114,7 @@ class Service
                     // header("Location:service.php");
                     echo "<script type='text/javascript'>window.location.href='service.php'</script>";
                     
-                    session::set('success', 'Service Update Successfully');
+                    session::set('success', 'Food Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
                 }
@@ -137,7 +144,7 @@ class Service
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    session::set('success', 'Service Delete Successfully');
+                    session::set('success', 'Food Delete Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
                 }

@@ -12,57 +12,11 @@ $contactMessageCount = mysqli_query($database, $contactQuary);
 $serviceCount = mysqli_query($database, $serviceQuary);
 ?>
 <div class="col-sm-10">
-  <div class="card border-dark mh-600">
+  <div class="card mh-600">
     <div class="container">
-      <h6 class="my-3"><strong>Welcome <?php echo session::get('username'); ?> </strong></h6>
+      <h6 class="my-3"><strong>Dashboard </strong></h6>
       <div class="card">
-        <div class="row p-2 m-0">
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="row p-1">
-              <div class="col-9 p-2  bg-info text-align-center">
-                <div class="text-align-center">
-                  <p class="p-0 m-0 text-white">Total</p>
-                  <strong><a class="text-white" href="appointment.php">Subscribers</a></strong>
-                </div>
-              </div>
-              <div class="col-3 bg-success">
-                <h2 class="text-white pl-2 mt-2 text-align-center"><?php if (mysqli_num_rows($appointData) > 0) {
-                                                                      echo  mysqli_num_rows($appointData);
-                                                                    } ?></h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="row p-1">
-              <div class="col-9 p-2  bg-warning text-align-center">
-                <div class="text-align-center">
-                  <p class="p-0 m-0 text-white">Total</p>
-                  <strong><a class="text-white" href="contactmessage.php">Contact Message</a></strong>
-                </div>
-              </div>
-              <div class="col-3 bg-info">
-                <h2 class="text-white pl-2 mt-2 text-align-center"><?php if (mysqli_num_rows($contactMessageCount) > 0) {
-                                                                      echo  mysqli_num_rows($contactMessageCount);
-                                                                    } ?></h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 col-lg-4">
-            <div class="row p-1">
-              <div class="col-9 p-2  bg-warning text-align-center">
-                <div class="text-align-center">
-                  <p class="p-0 m-0 text-white">Total</p>
-                  <strong> <a class="text-white" href="service.php"> Services</a></strong>
-                </div>
-              </div>
-              <div class="col-3 bg-primary">
-                <h2 class="text-white pl-2 mt-2 text-align-center"><?php if (mysqli_num_rows($serviceCount) > 0) {
-                                                                      echo  mysqli_num_rows($serviceCount);
-                                                                    } ?></h2>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>

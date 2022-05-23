@@ -4,7 +4,7 @@
 
 
 <div class="col-sm-10">
-  <div class="card border-dark mh-600">
+  <div class="card mh-600">
     <h6 class="mb-0 alert alert-info"><strong>Services</strong>
       <a href="addService.php" class="btn btn-info">
         <i class="fa fa-plus" aria-hidden="true"></i>

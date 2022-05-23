@@ -4,7 +4,7 @@
 <section id="page-title" class="page-title-parallax page-title-dark include-header" style="padding: 250px 0; background-image: url('assets/images/d1.jpg'); background-size: cover; background-position: center center;" data-bottom-top="background-position:0px 400px;" data-top-bottom="background-position:0px -500px;">
 
     <div class="container clearfix">
-        <h1>Galleries</h1>
+        <h1>All Foods</h1>
         <span>Everything you need to know about our Company</span>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -22,13 +22,16 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="section_heading--area mb-4">
-                        <span>G</span>
                         <span>A</span>
-                        <span>L</span>
-                        <span>L</span>
-                        <span>E</span>
-                        <span>R</span>
-                        <span>Y</span>
+                        <span>l</span>
+                        <span>l</span>
+                        <br>
+                        <span>f</span>
+                        <span>O</span>
+                        <span>O</span>
+                        <span>D</span>
+                        <span>S</span>
+                        <br>
                     </div>
                 </div>
             </div>

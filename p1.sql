@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2022 at 03:27 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.26
+-- Generation Time: May 23, 2022 at 07:40 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,7 +75,7 @@ CREATE TABLE `default_setting` (
 --
 
 INSERT INTO `default_setting` (`id`, `title`, `about`, `email`, `phone`, `fb`, `twitter`, `google`, `address`, `instagram`, `youtube`, `linkedin`, `logo`, `bodybackground`, `copyright`, `fb_page`) VALUES
-(1, 'Marzia\'s Mehendi', 'this is my test about', 'testing4900@gmail.com', '000000000', 'https://fb/', 'https://twitter.com/', 'https://google.com', 'Bangladesh', 'https://www.instagrame.com', 'https://www.youtube.com/', 'https://www.linkdin.com/', 'assets/images/logo.jpg', NULL, '© Copyright 2020 all resarved', 'https://www.fbpage.com/');
+(1, 'memu ghi', 'this is my test about', 'testing4900@gmail.com', '000000000', 'https://fb/', 'https://twitter.com/', 'https://google.com', 'Bangladesh', 'https://www.instagrame.com', 'https://www.youtube.com/', 'https://www.linkdin.com/', 'assets/images/logo.jpg', NULL, '© Copyright 2020 all resarved', 'https://www.fbpage.com/');
 
 -- --------------------------------------------------------
 
@@ -196,9 +196,9 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `image`, `price`) VALUES
-(15, 'service3', 'upload/15-04-22-1650056149.jpg', '1000'),
-(16, 'service2', 'upload/15-04-22-1650056177.jpg', '12500'),
-(17, 'service3', 'upload/15-04-22-1650056203.jpg', '500');
+(16, 'RecipeTin Eats How to make Ghee and Clarified Butter', 'upload/services/23-05-22-1653327341.jpg', '12500'),
+(17, 'Deep Pure Cow Ghee Clarified Butter, 64 Ounce', 'upload/services/23-05-22-1653327178.jpg', '500'),
+(20, 'Ghee vs butter 1 pot ghee', 'upload/services/23-05-22-1653327110.jpg', '23456');
 
 -- --------------------------------------------------------
 
@@ -219,8 +219,8 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `name`, `heading`, `subheading`, `image`) VALUES
-(11, 'slider 1', 'welcome For Our Service', 'Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on your own', 'upload/15-04-22-1650056451.jpg'),
-(12, 'slider2', 'Service which is Going On', 'simply put them on your own', 'upload/15-04-22-1650056522.jpg');
+(11, 'slider 1', 'welcome For Our Service', 'Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on your own', 'upload/sliders/23-05-22-1653324001.jpg'),
+(12, 'slider2', 'Service which is Going On', 'simply put them on your own', 'upload/sliders/23-05-22-1653323973.jpg');
 
 -- --------------------------------------------------------
 
@@ -385,7 +385,7 @@ ALTER TABLE `pakages`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `sliders`

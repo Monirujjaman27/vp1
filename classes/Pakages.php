@@ -145,7 +145,7 @@ class Pakages
     public function del($gatId)
 
     {
-        $database = mysqli_connect('localhost', 'root', '', 'p1');
+        $database = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         $quary = "SELECT * FROM pakages where id = '$gatId'";
         $quaryData = mysqli_query($database, $quary);
         if (mysqli_num_rows($quaryData) > 0) {

@@ -18,7 +18,7 @@
             </div>
             <div class="row col-mb-50 mb-0">
                 <?php
-                $getdata = $services_class->showLimit();
+                $getdata = $post_class->showLimit();
                 if ($getdata) {
                     while ($result = $getdata->fetch_assoc()) {
                 ?>

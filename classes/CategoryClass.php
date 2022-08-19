@@ -4,7 +4,7 @@ include_once($filepath . '/../lib/database.php');
 include_once($filepath . '/../halpers/formet.php');
 ?>
 <?php
-class Service
+class CategoryClass
 {
     private $db;
     private $fm;
@@ -16,53 +16,27 @@ class Service
     public function add($req, $file)
     {
         $name = $this->fm->validation($req['name']);
-        $name = mysqli_real_escape_string($this->db->link, $name);
-        $price = $this->fm->validation($req['price']);
-        $price = mysqli_real_escape_string($this->db->link, $price);
-
-        $permited  = array('jpg', 'jepg', 'png', 'gif');
-        $file_name = $file['image']['name'];
-        $file_size = $file['image']['size'];
-        $file_temp = $file['image']['tmp_name'];
-
-        $div          = explode('.', $file_name);
-        $file_ext     = strtolower(end($div));
-        $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/services/" . $unique_image;
-        if ($name == '' || $file == '') {
-            $msg = 'Fild Must Not Be empty';
-            return $msg;
-        } elseif ($file_size > 1048567) {
-            $msg = "Image size Should be less then 1MB";
-            return $msg;
-        } elseif (in_array($file_ext, $permited) === FALSE) {
-            $msg = "You can upload only: " . implode(', ', $permited);
-            return $msg;
-        } else {
-            move_uploaded_file($file_temp, $upload_image);
-            $query = "INSERT INTO services(name, price, image) VALUES ('$name','$price','$upload_image')";
-            $result = $this->db->insert($query);
-            if ($result) {
-                $name = '';
-                $file = '';
-                session::set('success', 'Food Create Successfully');
-                // header("Location:service.php");
-                echo "<script type='text/javascript'>window.location.href='service.php'</script>";
-            } else {;
-                session::set('warning', 'There Was Something Wrong to Update');
-            }
+        $query = "INSERT INTO posts(name) VALUES ('$name')";
+        $result = $this->db->insert($query);
+        if ($result) {
+            $name = '';
+            session::set('success', 'Food Create Successfully');
+            // header("Location:service.php");
+            echo "<script type='text/javascript'>window.location.href='service.php'</script>";
+        } else {;
+            session::set('warning', 'There Was Something Wrong to Update');
         }
     }
     public function show()
     {
-        $query = "SELECT * FROM services order by id DESC";
+        $query = "SELECT * FROM posts order by id DESC";
         $result = $this->db->select($query);
         return $result;
     }
 
     public function showLimit()
     {
-        $query = "SELECT * FROM services order by id DESC Limit 6";
+        $query = "SELECT * FROM posts order by id DESC Limit 6";
         $result = $this->db->select($query);
         return $result;
     }
@@ -80,13 +54,13 @@ class Service
         $div          = explode('.', $file_name);
         $file_ext     = strtolower(end($div));
         $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/services/" . $unique_image;
+        $upload_image = "upload/posts/" . $unique_image;
         if (empty($file_name)) {
             if ($name == '') {
                 $msg = 'Fild Must Not Be empty';
                 return $msg;
             } else {
-                $query = "UPDATE services SET name = '$name' WHERE id = '$id'";
+                $query = "UPDATE posts SET name = '$name' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
                     session::set('success', 'Service Update Successfully');
@@ -108,12 +82,12 @@ class Service
                 if (file_exists($oldImage)) {
                     unlink($oldImage);
                 }
-                $query = "UPDATE services SET name = '$name', image = '$upload_image' WHERE id = '$id'";
+                $query = "UPDATE posts SET name = '$name', image = '$upload_image' WHERE id = '$id'";
                 $result = $this->db->update($query);
                 if ($result) {
                     // header("Location:service.php");
                     echo "<script type='text/javascript'>window.location.href='service.php'</script>";
-                    
+
                     session::set('success', 'Food Update Successfully');
                 } else {
                     session::set('warning', 'There Was Something Wrong to Update');
@@ -121,24 +95,24 @@ class Service
             }
         }
     }
-    
+
     public function showById($gatId)
     {
-        $query = "SELECT * FROM services WHERE id = '$gatId'";
+        $query = "SELECT * FROM posts WHERE id = '$gatId'";
         $result = $this->db->select($query);
         return $result;
     }
-    
+
     public function del($gatId)
-    
+
     {
         $database = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        $quary = "SELECT * FROM services where id = '$gatId'";
+        $quary = "SELECT * FROM posts where id = '$gatId'";
         $quaryData = mysqli_query($database, $quary);
         if (mysqli_num_rows($quaryData) > 0) {
             foreach ($quaryData as $item) {
                 $queryImage = $item['image'];
-                $delquery = "DELETE FROM services WHERE id = '$gatId'";
+                $delquery = "DELETE FROM posts WHERE id = '$gatId'";
                 $deldata = $this->db->delete($delquery);
                 if ($deldata) {
                     if (file_exists($queryImage)) {

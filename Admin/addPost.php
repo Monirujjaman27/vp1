@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="description">Description</label>
             <textarea name="description" class="form-control" placeholder="Description" id="description" cols="30" rows="3"></textarea>
           </div>
-          <a class="btn btn-info mt-3" href="posts.php"><i class="fa fa-arrow-left"></i> Back</a>
+          <a class="btn btn-info mt-3" href="post.php"><i class="fa fa-arrow-left"></i> Back</a>
           <button class="btn btn-success mt-3 float-right" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
         </form>
       </div>

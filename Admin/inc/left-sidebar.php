@@ -10,20 +10,15 @@
                                   } ?>">
             <strong><a class="text-dark" href="dashboard.php">Dashboard</a></strong>
           </div>
-          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'category.php') {
-                                              echo 'bg-primary';
-                                            } ?>">
+          <!-- <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'category.php') {
+                                                    echo 'bg-primary';
+                                                  } ?>">
             <h6 class="mb-0"><a class="text-dark" href="category.php"><i class="fa fa-paper-plane" aria-hidden="true"></i>Category</a></h6>
-          </div>
+          </div> -->
           <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'post.php') {
                                               echo 'bg-primary';
                                             } ?>">
             <h6 class="mb-0"><a class="text-dark" href="post.php"><i class="fa fa-paper-plane" aria-hidden="true"></i> Posts</a></h6>
-          </div>
-          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'service.php') {
-                                              echo 'bg-primary';
-                                            } ?>">
-            <h6 class="mb-0"><a class="text-dark" href="service.php"><i class="fa fa-handshake-o" aria-hidden="true"></i> Service</a></h6>
           </div>
           <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'orders.php' || basename($_SERVER['SCRIPT_NAME']) == 'addSlider.php' || basename($_SERVER['SCRIPT_NAME']) == 'editSlider.php') {
                                               echo 'bg-primary';
@@ -33,12 +28,7 @@
           <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'sliders.php' || basename($_SERVER['SCRIPT_NAME']) == 'addSlider.php' || basename($_SERVER['SCRIPT_NAME']) == 'editSlider.php') {
                                               echo 'bg-primary';
                                             } ?>">
-            <h6 class="mb-0"><a class="text-dark" href="sliders.php">Sliders</a></h6>
-          </div>
-          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'gallery.php' || basename($_SERVER['SCRIPT_NAME']) == 'addGallery.php' || basename($_SERVER['SCRIPT_NAME']) == 'editSlider.php') {
-                                              echo 'bg-primary';
-                                            } ?>">
-            <h6 class="mb-0"><a class="text-dark" href="gallery.php"><i class="fa fa-file-image-o" aria-hidden="true"></i> Gallery</a></h6>
+            <h6 class="mb-0"><a class="text-dark" href="sliders.php"> <i class="fa fa-sliders mr-1" aria-hidden="true"></i>Sliders</a></h6>
           </div>
           <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'contactmessage.php') {
                                               echo 'bg-primary';
@@ -55,10 +45,10 @@
                                             } ?>">
             <h6 class="mb-0"><a class="text-dark" href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></h6>
           </div>
-          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'about-us.php') {
-                                              echo 'bg-primary';
-                                            } ?>">
+          <!-- <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'about-us.php') {
+                                                    echo 'bg-primary';
+                                                  } ?>">
             <h6 class="mb-0"><a class="text-dark" href="about-us.php"><i class="fa fa-info" aria-hidden="true"></i> About Us Page</a></h6>
-          </div>
+          </div> -->
         </div>
       </div>

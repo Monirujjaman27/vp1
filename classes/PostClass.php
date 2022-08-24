@@ -66,9 +66,9 @@ class PostClass
         return $result;
     }
 
-    public function showLimit()
+    public function showLimit($category)
     {
-        $query = "SELECT * FROM posts order by id DESC Limit 6";
+        $query = "SELECT * FROM posts where category = '$category' order by id DESC Limit 6";
         $result = $this->db->select($query);
         return $result;
     }

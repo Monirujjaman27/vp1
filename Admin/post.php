@@ -28,6 +28,7 @@ spl_autoload_register(function ($classes) {
             <tr class='w-100'>
               <th>No</th>
               <th>Post Name</th>
+              <th>Category</th>
               <th>Price</th>
               <th>Image</th>
               <th>Action</th>
@@ -42,8 +43,9 @@ spl_autoload_register(function ($classes) {
                 $i++;
             ?>
                 <tr>
-                  <td><?= $i ?></td>
+                  <td><?= $i ?></td>  
                   <td><?= ucwords($result['name']); ?></td>
+                  <td><?= $result['category']; ?></td>
                   <td><?= $result['price'] ?></td>
                   <td><img class='' height="50" width="50" src="<?= $result['image']; ?>" alt="<?= $result['image']; ?>"></td>
                   <td>

@@ -8,7 +8,7 @@ spl_autoload_register(function ($classes) {
 <div class="col-sm-10">
   <div class="card mh-600">
     <h6 class="mb-0 alert alert-info"><strong>Posts</strong>
-      <a href="addPost.php" class="btn btn-info">
+      <a href="addPost.php" class="btn btn-sm btn-info">
         <i class="fa fa-plus" aria-hidden="true"></i>
         New Post</a>
       </h1>

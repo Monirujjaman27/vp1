@@ -45,6 +45,7 @@ class PostClass
             $msg = "You can upload only: " . implode(', ', $permited);
             return $msg;
         } else {
+            // chmod('upload/posts', 7777);
             move_uploaded_file($file_temp, $upload_image);
             $query = "INSERT INTO posts(name, price, offerprice, image, category, description) VALUES ('$name','$price','$offerprice','$upload_image','$category','$description')";
             $result = $this->db->insert($query);
@@ -126,7 +127,7 @@ class PostClass
                 $result = $this->db->update($query);
                 if ($result) {
                     // header("Location:service.php");
-                    echo "<script type='text/javascript'>window.location.href='service.php'</script>";
+                    echo "<script type='text/javascript'>window.location.href='post.php'</script>";
 
                     session::set('success', 'Food Update Successfully');
                 } else {
@@ -158,9 +159,9 @@ class PostClass
                     if (file_exists($queryImage)) {
                         unlink($queryImage);
                     }
-                    session::set('success', 'Food Delete Successfully');
+                    session::set('success', 'Delete Successfully');
                 } else {
-                    session::set('warning', 'There Was Something Wrong to Update');
+                    session::set('warning', 'There Was Something Wrong to Delete This Item');
                 }
             }
         }

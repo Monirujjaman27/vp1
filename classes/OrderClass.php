@@ -39,8 +39,8 @@ class OrderClass
         $query = "INSERT INTO orders(name, pakage_name, price, offerprice, email, phone, date, requirements) VALUES ('$name','$pakage_name','$price','$offerprice','$email','$phone', '$date','$requirements')";
         $result = $this->db->insert($query);
         if ($result) {
-            return '<script type="text/javascript">window.location = "thankyou.php"</script>';
-            // return '<p class="mb-0 alert alert-success">Booking Successfully. We will Contact You Soon</p>';
+            // return '<script type="text/javascript">window.location = "thankyou.php"</script>';
+            return '<p class="mb-0 alert alert-success">Sent Successfully. We will Contact You Soon</p>';
         } else {
             session::set('warning', 'There Was Something Wrong to Insert the Service');
         }

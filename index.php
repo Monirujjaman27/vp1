@@ -27,7 +27,7 @@
                         <div class="col-lg-4">
                             <div class="card_bg">
                                 <div class="product_image">
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
                                 </div>
                                 <div class="product_details text-center">
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
@@ -35,7 +35,7 @@
                                     <div class="product_price--area">
                                         <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
                                     </div>
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="col-lg-4">
                             <div class="card_bg">
                                 <div class="product_image">
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
                                 </div>
                                 <div class="product_details text-center">
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
@@ -76,7 +76,7 @@
                                     <div class="product_price--area">
                                         <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
                                     </div>
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                         <div class="col-lg-4">
                             <div class="card_bg">
                                 <div class="product_image">
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>"><img height="300px" width="100%" class="pakage_image" src="Admin/<?= $result['image']; ?>"></a>
                                 </div>
                                 <div class="product_details text-center">
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
@@ -117,7 +117,7 @@
                                     <div class="product_price--area">
                                         <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
                                     </div>
-                                    <a href="booking.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
+                                    <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,7 @@
                                             } ?>">
             <h6 class="mb-0"><a class="text-dark" href="post.php"><i class="fa fa-paper-plane" aria-hidden="true"></i> Posts</a></h6>
           </div>
-          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'orders.php' || basename($_SERVER['SCRIPT_NAME']) == 'addSlider.php' || basename($_SERVER['SCRIPT_NAME']) == 'editSlider.php') {
+          <div class="px-3 py-2 card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'orders.php') {
                                               echo 'bg-primary';
                                             } ?>">
             <h6 class="mb-0"><a class="text-dark" href="orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Orders</a></h6>

@@ -16,7 +16,7 @@
       $delsuccess = $service->ChangeStatus($gatId, $_GET['status']);
     }
     ?>
-    <div class="d-flex">
+    <div class="table-responsive d-flex">
       <table class="m-2 table table-hover table-bordered table-striped w-98">
         <thead class='w-100'>
           <tr class='w-100'>

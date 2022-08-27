@@ -45,7 +45,6 @@
                             }
                         }
                         ?>
-
                         <form action="" method="post" class="mb-0">
                             <div class="input-group mx-auto">
                                 <div class="input-group-text"><i class="icon-email2"></i></div>

@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="w-50">
               <label for="offerprice">Offer Price</label>
-              <input class="form-control" name="offerprice" type="number" value="<?php echo isset($_POST["offerprice"]) ? $_POST["offerprice"] : ''; ?>" required min="0" placeholder="Offer Price">
+              <input class="form-control" name="offerprice" type="number" value="<?php echo isset($_POST["offerprice"]) ? $_POST["offerprice"] : ''; ?>" min="0" placeholder="Offer Price">
             </div>
           </div>
           <div class="form-group">

@@ -64,86 +64,88 @@ class PostClass
     {
         $query = "SELECT * FROM posts order by id DESC";
         $result = $this->db->select($query);
+        // echo '<script type="text/javascript">toastr.success(`Update Successfully`)</script>';
         return $result;
     }
 
-    public function showLimit($category)
+    public function showLimit($category, $limit = '6')
     {
-        $query = "SELECT * FROM posts where category = '$category' order by id DESC Limit 6";
+        $query = "SELECT * FROM posts where category = '$category' order by id DESC Limit $limit";
         $result = $this->db->select($query);
         return $result;
     }
     public function update($req, $file, $id)
     {
-        $name = $this->fm->validation($req['name']);
-        $oldImage = $this->fm->validation($req['oldImage']);
-        $name = mysqli_real_escape_string($this->db->link, $name);
-        $oldImage = mysqli_real_escape_string($this->db->link, $oldImage);
-        $price = $this->fm->validation($req['price']);
-        $price = mysqli_real_escape_string($this->db->link, $price);
-        $offerprice = $this->fm->validation($req['offerprice']);
-        $offerprice = mysqli_real_escape_string($this->db->link, $offerprice);
-        $description = $this->fm->validation($req['description']);
-        $description = mysqli_real_escape_string($this->db->link, $description);
-        $category = $this->fm->validation($req['category']);
-        $category = mysqli_real_escape_string($this->db->link, $category);
+        try {
+            $name = $this->fm->validation($req['name']);
+            $oldImage = $this->fm->validation($req['oldImage']);
+            $name = mysqli_real_escape_string($this->db->link, $name);
+            $oldImage = mysqli_real_escape_string($this->db->link, $oldImage);
+            $price = $this->fm->validation($req['price']);
+            $price = mysqli_real_escape_string($this->db->link, $price);
+            $offerprice = $this->fm->validation($req['offerprice']);
+            $offerprice = mysqli_real_escape_string($this->db->link, $offerprice);
+            $description = $this->fm->validation($req['description']);
+            $description = mysqli_real_escape_string($this->db->link, $description);
+            $category = $this->fm->validation($req['category']);
+            $category = mysqli_real_escape_string($this->db->link, $category);
 
-        $permited  = array('jpg', 'jepg', 'png', 'gif');
-        $file_name = $file['image']['name'];
-        $file_size = $file['image']['size'];
-        $file_temp = $file['image']['tmp_name'];
-        $div          = explode('.', $file_name);
-        $file_ext     = strtolower(end($div));
-        $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
-        $upload_image = "upload/posts/" . $unique_image;
-        if (empty($file_name)) {
-            if ($name == '') {
-                $msg = 'Fild Must Not Be empty';
-                return $msg;
-            } else {
-                $query = "UPDATE posts SET name = '$name', price= '$price', price= '$offerprice',offerprice= '$price',category= '$category',description= '$description', WHERE id = '$id'";
-                $result = $this->db->update($query);
-                if ($result) {
-                    session::set('success', 'Post Update Successfully');
-                    header("Location:post.php");
+            $permited  = array('jpg', 'jepg', 'png', 'gif');
+            $file_name = $file['image']['name'];
+            $file_size = $file['image']['size'];
+            $file_temp = $file['image']['tmp_name'];
+            $div          = explode('.', $file_name);
+            $file_ext     = strtolower(end($div));
+            $unique_image = date('d-m-y') . '-' . time() . '.' . $file_ext;
+
+            if (isset($file['image']) && $file['image']['name'] !== '') {
+                if ($file_size > 1048567) {
+                    $msg = "Image size Should be less then 1MB";
+                    return $msg;
+                } elseif (in_array($file_ext, $permited) === FALSE) {
+                    $msg = "You can upload only: " . implode(', ', $permited);
+                    return $msg;
                 } else {
-                    session::set('warning', 'There Was Something Wrong to Update');
+                    $upload_image = "upload/posts/" . $unique_image;
+                    move_uploaded_file($file_temp, $upload_image);
+                    if (file_exists($oldImage)) {
+                        unlink($oldImage);
+                    }
                 }
-            }
-        } else {
-
-            if ($file_size > 1048567) {
-                $msg = "Image size Should be less then 1MB";
-                return $msg;
-            } elseif (in_array($file_ext, $permited) === FALSE) {
-                $msg = "You can upload only: " . implode(', ', $permited);
-                return $msg;
             } else {
-                move_uploaded_file($file_temp, $upload_image);
-                if (file_exists($oldImage)) {
-                    unlink($oldImage);
-                }
-                $query = "UPDATE posts SET name = '$name', image = '$upload_image' WHERE id = '$id'";
-                $result = $this->db->update($query);
-                if ($result) {
-                    // header("Location:service.php");
-                    echo "<script type='text/javascript'>window.location.href='post.php'</script>";
-
-                    session::set('success', 'Food Update Successfully');
-                } else {
-                    session::set('warning', 'There Was Something Wrong to Update');
-                }
+                $upload_image = $oldImage;
             }
+            $query = "UPDATE posts SET 
+            name = '$name',
+            price= '$price',
+            offerprice= '$offerprice',
+            image = '$upload_image',
+            category= '$category',
+            description= '$description'
+            WHERE id=$id";
+            // $query = "UPDATE posts SET name = '$name',WHERE id = '$id'";
+            $result = $this->db->update($query);
+            if ($result) {
+                // header("Location:post.php");
+                echo "<script type='text/javascript'>window.location.href='post.php'</script>";
+                // echo '<script type="text/javascript">toastr.success(`Update Successfully`)</script>';
+                session::set('success', 'Update Successfully');
+            } else {
+                session::set('warning', 'There Was Something Wrong to Update');
+            }
+        } catch (\Throwable $th) {
+            session::set('warning', $th->getMessage());
         }
     }
 
+    // get data by Id 
     public function showById($gatId)
     {
         $query = "SELECT * FROM posts WHERE id = '$gatId'";
         $result = $this->db->select($query);
         return $result;
     }
-
+    // del data 
     public function del($gatId)
 
     {

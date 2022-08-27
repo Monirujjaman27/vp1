@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="Category">Category</label>
             <select class="form-control" name="category" id="Category">
               <option value="">----Select----</option>
-              <option <?php echo isset($_POST["name"]) ?? "selected"; ?> value="Sweets">Sweets</option>
-              <option <?php echo isset($_POST["name"]) ?? "selected"; ?> value="Ghee">Ghee</option>
-              <option <?php echo isset($_POST["name"]) ?? "selected"; ?> value="Yogurt">Yogurt</option>
+              <option <?= isset($_POST["name"]) ? "selected" : ''; ?> value="Sweets">Sweets</option>
+              <option <?= isset($_POST["name"]) ? "selected" : ''; ?> value="Ghee">Ghee</option>
+              <option <?= isset($_POST["name"]) ? "selected" : ''; ?> value="Yogurt">Yogurt</option>
             </select>
           </div>
           <div class="form-group d-flex">

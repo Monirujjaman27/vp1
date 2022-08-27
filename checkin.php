@@ -10,6 +10,22 @@ if (!isset($gatId) || $gatId == NULL) {
 }
 ?>
 
+<!-- Page Title
+		============================================= -->
+<section id="page-title" class="page-title-parallax page-title-dark include-header" style="padding: 250px 0; background-image: url('Admin/<?= $result['image']; ?>'); background-size: cover; background-position: center center;" data-bottom-top="background-position:0px 400px;" data-top-bottom="background-position:0px -500px;">
+
+    <div class="container clearfix">
+        <h1>Checkin</h1>
+        <span>Everything you need to know about our Company</span>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><?= ucfirst($result['name']); ?></li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+
+
 <section id="content">
     <div class="content-wrap">
         <div class="container clearfix">

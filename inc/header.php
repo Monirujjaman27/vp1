@@ -48,11 +48,10 @@ $default_settings_items = $data->fetch_assoc();
         <link rel="stylesheet" href="assets/my.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="assets/images/logo.jpg" type="image/gif" sizes="16x16">
+        <link rel="icon" href="Admin/<?= $default_settings_items['logo'] ?>" type="image/gif" sizes="16x16">
         <!-- Document Title
 	============================================= -->
         <title><?= $default_settings_items['title'] ?></title>
-
     </head>
 
 <body class="stretched">

@@ -1,9 +1,7 @@
 <?php include "inc/header.php"; ?>
 <?php include 'inc/left-sidebar.php'; ?>
-<?php include '../classes/defaultSettings.php'; ?>
 
 <?php
-$setting = new defaultSettings();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $insert = $setting->updateDefaults($_POST, $_FILES);
 }
@@ -38,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="row">
                                     <div class="col-6">
                                         <input id='logo' class="form-control  my-2" name="logo" type="file">
+                                        <input id='' class="form-control  my-2" name="old_logo" value="<?= $item['logo'] ?>" type="hidden">
                                     </div>
                                     <div class="col-6">
                                         <img src="<?= $item['logo'] ?>" class="img-thumbnail float-right" height="50px" width="50px" alt="logo">
@@ -118,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <textarea class="form-control  my-2" name="copyright" id="copyright" cols="30" rows="2" placeholder="Copyright"><?= $item['copyright'] ?></textarea>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td><label class="font-weight-bold" for="bodybackground">Body Background: </label></td>
                             <td>
                                 <div class="row">
@@ -130,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> -->
 
                         <tr>
                             <td>

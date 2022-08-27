@@ -33,7 +33,11 @@
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
                                     <p class="content_details--text text-center"><?= substr(ucfirst($result['description']), 0, 80); ?></p>
                                     <div class="product_price--area">
-                                        <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
+                                        <?php if ($result['offerprice']) { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['offerprice']; ?></span> <del><?= $result['price'] ?? '৳' . $result['price']; ?></del>
+                                        <?php } else { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['price']; ?></span>
+                                        <?php } ?>
                                     </div>
                                     <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>
@@ -74,7 +78,11 @@
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
                                     <p class="content_details--text text-center"><?= substr(ucfirst($result['description']), 0, 80); ?></p>
                                     <div class="product_price--area">
-                                        <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
+                                        <?php if ($result['offerprice']) { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['offerprice']; ?></span> <del><?= $result['price'] ?? '৳' . $result['price']; ?></del>
+                                        <?php } else { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['price']; ?></span>
+                                        <?php } ?>
                                     </div>
                                     <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>
@@ -115,7 +123,12 @@
                                     <h1 class="p_details--title text-center"><?= ucfirst($result['name']); ?></h1>
                                     <p class="content_details--text text-center"><?= substr(ucfirst($result['description']), 0, 80); ?></p>
                                     <div class="product_price--area">
-                                        <span class="regular_price">৳ <?= $result['offerprice']; ?></span> <del>৳<?= $result['price']; ?></del>
+
+                                        <?php if ($result['offerprice']) { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['offerprice']; ?></span> <del><?= $result['price'] ?? '৳' . $result['price']; ?></del>
+                                        <?php } else { ?>
+                                            <span class="regular_price ml-1">৳ <?= $result['price']; ?></span>
+                                        <?php } ?>
                                     </div>
                                     <a href="checkin.php?id=<?= base64_encode($result['id']); ?>" class="btn btn-warning mt-2 book_now-btn text-white font-weight-bold">Check In</a>
                                 </div>

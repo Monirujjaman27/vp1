@@ -29,7 +29,7 @@ $result = $data->fetch_assoc();
       }
       ?>
     </h6>
-    
+
     <div class="row">
       <div class="mx-2 col-sm-6 m-auto card p-3">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -40,15 +40,15 @@ $result = $data->fetch_assoc();
             <label for="Category">Category</label>
             <select class="form-control" name="category" id="Category">
               <option value="">----Select----</option>
-              <option <?php echo $result["category"] == 'Sweets' ?? "selected"; ?> value="Sweets">Sweets</option>
-              <option <?php echo $result["category"] == 'Ghee' ?? "selected"; ?> value="Ghee">Ghee</option>
-              <option <?php echo $result["category"] == 'Yogurt' ?? "selected"; ?> value="Yogurt">Yogurt</option>
+              <option <?= $result["category"] == 'Sweets' ? "selected" : ''; ?> value="Sweets">Sweets</option>
+              <option <?= $result["category"] == 'Ghee' ? "selected" : ''; ?> value="Ghee">Ghee</option>
+              <option <?= $result["category"] == 'Yogurt' ? "selected" : ''; ?> value="Yogurt">Yogurt</option>
             </select>
           </div>
           <div class="form-group d-flex">
             <div class="w-50">
               <label for="Price">Price</label>
-              <input class="form-control" name="price" type="number" value="<?php echo $result["price"]?>" required min="0" placeholder="Price">
+              <input class="form-control" name="price" type="number" value="<?php echo $result["price"] ?>" required min="0" placeholder="Price">
             </div>
             <div class="w-50">
               <label for="offerprice">Offer Price</label>

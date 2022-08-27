@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-sm-2 bg-white p-0">
         <div class="card">
+
           <div class="card-header <?php if (basename($_SERVER['SCRIPT_NAME']) == 'dashboard.php') {
                                     echo 'bg-primary';
                                   } else {
@@ -50,5 +51,8 @@
                                                   } ?>">
             <h6 class="mb-0"><a class="text-dark" href="about-us.php"><i class="fa fa-info" aria-hidden="true"></i> About Us Page</a></h6>
           </div> -->
+          <div class="px-3 py-2 card-header">
+            <h6 class="mb-0"><a class="text-dark" target="_blank" href="../index.php"><i class="fa fa-eye mr-2" aria-hidden="true"></i>Visit Site</a></h6>
+          </div>
         </div>
       </div>
